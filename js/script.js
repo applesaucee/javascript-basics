@@ -47,3 +47,28 @@ document.body.appendChild(kitty);
 //note that this is not best practice if you just want a picture. js is for adding dynamic content (content that changes with the user)
 //never ever create a page with js!
 
+//function for onPuppyClick
+function onPuppyClick() {
+	//alert('you clicked my puppy!');
+	document.getElementById('bark').play();
+} //onPuppyClick()
+
+//good practice to note start and end of a function
+
+//selecting the puppy-pic element
+var pup = document.getElementById('puppy-pic');
+
+//new way for up-to-date browsers
+if (pup.addEventListener) {
+	pup.addEventListener('click', onPuppyClick);
+}
+//old way for the people stragglin' 
+else if (pup.attachEvent) {
+	pup.attachEvent('click', onPuppyClick);
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+ //add event listeners for elements
+ //manipulate the DOM
+ 	alert("The DOM is ready!");
+});
